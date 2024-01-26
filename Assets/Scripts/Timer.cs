@@ -26,7 +26,7 @@ public class Timer : MonoBehaviour
         } else if(turn == 0){
             passTurn();
         }     else {
-            MainMenu.instance.PlayDrawingScene();
+            MainMenu.instance.PlayBattleScene();
         }
     }
 
@@ -43,7 +43,7 @@ public class Timer : MonoBehaviour
 
     public void passTurn() {
         if(turn >= 1) {
-            
+            MainMenu.instance.PlayBattleScene();
         }   else {
             turn++;
             resetTimer();
