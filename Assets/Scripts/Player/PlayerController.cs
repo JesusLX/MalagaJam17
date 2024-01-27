@@ -8,13 +8,17 @@ public class PlayerController : MonoBehaviour {
     public BattleLine battleLine;
     public Transform shotOrigin;
     public PlayerController enemy;
+    Animator animator;
     private void Start() {
+        animator = GetComponent<Animator>();
         GameManager.instance.onBattleEnd.AddListener(OnBattleEnd);
         GameManager.instance.onBattleStart.AddListener(OnBattleStart);
         battleLine.onAttack.AddListener(Attack);
     }
     public void Attack(int multiplier) {
         if (canAttack) {
+            animator.SetTrigger("throw");
+
             Gadget gadget = GadgetManager.instance.PlayRandom(shotOrigin, shotOrigin.localPosition, shotOrigin.rotation, enemy);
             StartCoroutine(HitWithDelay(2f, gadget));
         }
@@ -28,6 +32,8 @@ public class PlayerController : MonoBehaviour {
         if (!live) {
             Debug.Log(live, this);
             GameManager.instance.endBattle(gadget.thrower);
+        } else {
+            animator.SetTrigger("hitted");
         }
     }
     public void OnBattleStart() {
