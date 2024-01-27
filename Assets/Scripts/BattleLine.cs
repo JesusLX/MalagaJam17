@@ -9,10 +9,19 @@ public class BattleLine : MonoBehaviour
     public bool canAttack;
     public Image lifePanel;
 
+    float fraction;
+    public float goalValue = 0.92f;
+
     private void Start() {
         lifePanel = this.gameObject.GetComponent<Image>();
         StartCoroutine(ChangeTimer());
     }
+    private void Update() {
+        if (Input.GetKeyDown(KeyCode.Space)) {
+            Attack();
+        }
+    }
+
     IEnumerator ChangeTimer() {
         float myTimer = 0;
         bool ascending = true;
@@ -24,7 +33,7 @@ public class BattleLine : MonoBehaviour
                 myTimer -= Time.deltaTime;
             }
 
-            float fraction = myTimer / maxTime;
+            fraction = myTimer / maxTime;
             lifePanel.fillAmount = fraction;
 
             if (myTimer >= maxTime) {
@@ -38,6 +47,20 @@ public class BattleLine : MonoBehaviour
     }
 
     private void Attack() {
-
+                   if(fraction >= goalValue) {
+            Debug.Log("ATAQUERRR con " + fraction);
+        }     else {
+            Debug.Log("Has fallao :(");
+            StartCoroutine(FailTime());
+        }
     }
+
+    IEnumerator FailTime() {
+        lifePanel.fillAmount = 0;
+        canAttack = false;
+        yield return new WaitForSeconds(2f);
+        canAttack = true;
+    }
+
+
 }
