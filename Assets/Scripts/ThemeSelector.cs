@@ -10,6 +10,8 @@ public class ThemeSelector : Singleton<ThemeSelector>
     public TextMeshProUGUI mText;
     public float themeSelectorTime = 5;
     public List<ParticleSystem> themeSelectedParticles;
+
+    public RectTransform panelThemeSelector;
     // Start is called before the first frame update
     void Start()
     {
@@ -39,6 +41,7 @@ public class ThemeSelector : Singleton<ThemeSelector>
         float moveBackTime = 0.5f;
         Vector3 initPos = mText.rectTransform.localPosition;
         Vector3 initScale = mText.rectTransform.localScale;
+        panelThemeSelector.DOAnchorPos(Vector2.zero, 3f).SetEase(Ease.OutElastic);
         mText.rectTransform.DOLocalMove(Vector3.zero, moveTime);
         mText.rectTransform.DOScale(Vector3.one * 5, moveTime);
         float waitTime = 0.01f;
@@ -55,6 +58,11 @@ public class ThemeSelector : Singleton<ThemeSelector>
         themeSelectedParticles.ForEach(particle => { particle.Play(); });
         yield return new WaitForSeconds(2f);
 
+        //panelThemeSelector.DOAnchorPos(Vector2.zero, 3f).SetEase(Ease.OutElastic).OnComplete(() => {
+        //    panelThemeSelector.DOAnchorPos(new Vector2(10000, 0), 1.25f);
+        //});
+
+        panelThemeSelector.DOAnchorPos(new Vector2(10000, 0), 1.25f);
         mText.rectTransform.DOLocalMove(initPos, moveBackTime);
         mText.rectTransform.DOScale(initScale, moveBackTime);
         yield return new WaitForSeconds(moveBackTime);
