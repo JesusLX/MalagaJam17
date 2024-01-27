@@ -12,53 +12,60 @@ public class TimerDrawing : MonoBehaviour {
 
     public static Turns turn = Turns.themeSelector;
     public enum Turns {
-        themeSelector, drawPlayer1, drawPlayer2, battle, endBattle
+        themeSelector, drawPlayer1 ,drawPlayer2, battle, endBattle
     }
 
     private void Start() {
         // timePanel = GetComponent<Image>();
 
         //ThemeSelector.instance.RunChange();
+        resetTimer();
         Coroutine cor = (ThemeSelector.instance.RunChange());
         StartCoroutine(StartThemeSelector(cor));
-
         turn = Turns.themeSelector;
     }
 
     IEnumerator StartThemeSelector(Coroutine waitUntilCoroutine) {
 
         yield return (waitUntilCoroutine);
-        passTurn();
+        if (waitUntilCoroutine != null)
+            passTurn();
 
         resetTimer();
 
         while (myTimer > 0f) {
             if (myTimer > 0f) {
                 changeTimer();
-            } else {
-                passTurn();
+                Debug.Log("Timer " + myTimer);
             }
 
             yield return new WaitForEndOfFrame();
         }
+        passTurn();
 
     }
 
 
     private void changeTimer() {
         myTimer -= Time.deltaTime;
-        float fraction = myTimer / maxTime;
+        float fraction = 0;
+        if (myTimer > 0f) {
+            fraction = myTimer / maxTime;
+        }
 
         timePanel.value = fraction;
     }
 
     private void resetTimer() {
         myTimer = maxTime;
+  
     }
 
     [ContextMenu("PassTurn")]
     public void passTurn() {
+        Debug.Log(turn);
         turn++;
+        Debug.Log(turn);
         switch (turn) {
             case Turns.themeSelector:
                 break;
@@ -66,8 +73,11 @@ public class TimerDrawing : MonoBehaviour {
                 resetTimer();
                 UIAnimator.instance.AnimatePlayerOnePanel();
                 break;
+            
             case Turns.drawPlayer2:
                 resetTimer();
+                StartCoroutine(StartThemeSelector(null));
+
                 UIAnimator.instance.AnimatePlayerTwoPanel();
                 break;
             case Turns.battle:
