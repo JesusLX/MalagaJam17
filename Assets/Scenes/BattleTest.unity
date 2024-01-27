@@ -862,7 +862,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gadgets:
+  - {fileID: 11400000, guid: a051780490ee3dd4d95803bf7049289e, type: 2}
+  - {fileID: 11400000, guid: 1098c88609f9d234e86497828cfffeb7, type: 2}
+  - {fileID: 11400000, guid: f8c7f694bdb0d4f4c828e845eb4c7eaf, type: 2}
+  - {fileID: 11400000, guid: f5d04fb612557e4489166e2b86eafa67, type: 2}
+  - {fileID: 11400000, guid: 77b620471c4b61944a0ce97fe85228d2, type: 2}
+  - {fileID: 11400000, guid: 6254b17c32facd54182b830f374fc0f0, type: 2}
   - {fileID: 11400000, guid: ca06e04e900d3184ca44df3b38d90fcd, type: 2}
+  - {fileID: 11400000, guid: dab55d9dc820a544a9c7e56396449a6f, type: 2}
+  - {fileID: 11400000, guid: c5b2a5ad9f3cd954aa6348809cb7ff99, type: 2}
+  - {fileID: 11400000, guid: 16d9b6bf17bbc6548aaa9c98e29c7188, type: 2}
+  - {fileID: 11400000, guid: b51449e76e562034cad00e5ee904bf43, type: 2}
+  - {fileID: 11400000, guid: 4f355b3473995744fae18d5a7cb82cf3, type: 2}
+  - {fileID: 11400000, guid: ad711b94383ff8544bf44e0ec813bc22, type: 2}
+  - {fileID: 11400000, guid: 5e11f48a019891c43923ea52ba8bd28f, type: 2}
+  - {fileID: 11400000, guid: 9be46ce62c3340c4d8dbc53150bc237b, type: 2}
+  - {fileID: 11400000, guid: f79d2dc8e4c5bbb4cbf9713baaa57753, type: 2}
   testId: circle
   testMultishootAtStart: 1
 --- !u!4 &963643928

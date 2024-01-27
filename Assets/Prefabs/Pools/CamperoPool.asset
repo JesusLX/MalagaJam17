@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: db5f4cd38285ba543a822e43ee60f57c, type: 3}
-  m_Name: CirclePool
+  m_Name: CamperoPool
   m_EditorClassIdentifier: 
-  Id: circle
+  Id: campero
   restParent: {fileID: 0}
   defaultCapacity: 100
   maxCapacity: 1000
-  prefab: {fileID: 1710176664227384169, guid: 8b5f58d0870223940855620e615dc68d, type: 3}
+  prefab: {fileID: 1710176664227384169, guid: 73792af964d682f418b7f5ae8886704b, type: 3}
