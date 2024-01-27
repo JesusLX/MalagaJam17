@@ -8,17 +8,19 @@ using UnityEngine.Events;
 public class BattleLine : MonoBehaviour {
     public float maxTime;
     public bool canAttack;
-    public Image lifePanel;
+    public Slider lifePanel;
     public UnityEvent<int> onAttack;
 
     public KeyCode pressButton;
 
     float fraction;
-    public float goalValue = 0.92f;
+    public float maxValue = 10f;
 
     private void Start() {
-        lifePanel = this.gameObject.GetComponent<Image>();
-        //StartCanAttack();
+        lifePanel = this.gameObject.GetComponentInChildren<Slider>();
+        lifePanel.maxValue = maxValue;
+        lifePanel.value = 0;
+        StartCoroutine(ChangeTimer());
     }
     private void Update() {
         if (Input.GetKeyDown(pressButton)) {
@@ -39,7 +41,7 @@ public class BattleLine : MonoBehaviour {
             }
 
             fraction = myTimer / maxTime;
-            lifePanel.fillAmount = fraction;
+            lifePanel.value = fraction;
 
             if (myTimer >= maxTime) {
                 ascending = false;
@@ -52,10 +54,13 @@ public class BattleLine : MonoBehaviour {
     }
 
     private void Attack() {
-        if (fraction >= 0.95f) {
+        float exact = maxValue/2;
+        float criticMargen = .03f;
+        float errorMargen = .20f;
+        if (fraction >= exact-criticMargen && fraction <= exact + criticMargen) {
             onAttack.Invoke(2);
             Debug.Log("ATAQUERRR PERFESTOOOO " + fraction);
-        } else if (fraction >= goalValue) {
+        } else if (fraction >= exact - errorMargen && fraction <= exact + errorMargen) {
             onAttack.Invoke(1);
             Debug.Log("ATAQUERRR con " + fraction);
         } else {
@@ -65,14 +70,14 @@ public class BattleLine : MonoBehaviour {
     }
 
     IEnumerator FailTime() {
-        Color previousColor = lifePanel.color;
-        lifePanel.color = new Color(236, 103, 126);
+        //Color previousColor = lifePanel.image.;
+        //lifePanel.color = new Color(236, 103, 126);
         lifePanel.transform.DOShakePosition(1f,5,25,120) ;
 
         canAttack = false;
         yield return new WaitForSeconds(1f);
 
-        lifePanel.color = previousColor;
+        //lifePanel.color = previousColor;
         StartCoroutine(ChangeTimer());
     }
 
