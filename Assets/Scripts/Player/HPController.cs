@@ -8,6 +8,9 @@ public class HPController : MonoBehaviour{
 
     private void Start() {
         slider = GetComponent<Slider>();
+
+    }
+    public void Init() {
         slider.value = maxHP;
         slider.maxValue = maxHP;
         slider.enabled = false;

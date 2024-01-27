@@ -8,7 +8,7 @@ using UnityEngine.UI;
 public class TimerDrawing : MonoBehaviour {
     public float maxTime;
     private float myTimer;
-    public Image timePanel;
+    public Slider timePanel;
 
     public static Turns turn = Turns.themeSelector;
     public enum Turns {
@@ -49,7 +49,7 @@ public class TimerDrawing : MonoBehaviour {
         myTimer -= Time.deltaTime;
         float fraction = myTimer / maxTime;
 
-        timePanel.fillAmount = fraction;
+        timePanel.value = fraction;
     }
 
     private void resetTimer() {
