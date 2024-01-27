@@ -18,7 +18,7 @@ public class BattleLine : MonoBehaviour {
 
     private void Start() {
         lifePanel = this.gameObject.GetComponent<Image>();
-        StartCoroutine(ChangeTimer());
+        //StartCanAttack();
     }
     private void Update() {
         if (Input.GetKeyDown(pressButton)) {
@@ -73,6 +73,10 @@ public class BattleLine : MonoBehaviour {
         yield return new WaitForSeconds(1f);
 
         lifePanel.color = previousColor;
+        StartCoroutine(ChangeTimer());
+    }
+
+    public void StartCanAttack() {
         StartCoroutine(ChangeTimer());
     }
 }
