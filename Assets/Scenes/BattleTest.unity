@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 134423844}
   - component: {fileID: 134423846}
   - component: {fileID: 134423845}
+  - component: {fileID: 134423847}
   m_Layer: 5
   m_Name: TimeBar
   m_TagString: Untagged
@@ -157,8 +158,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 41.59204, y: 437.91003}
-  m_SizeDelta: {x: -1063.772, y: -995.863}
+  m_AnchoredPosition: {x: -319.82898, y: -14.825012}
+  m_SizeDelta: {x: -1786.614, y: -90.393}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &134423845
 MonoBehaviour:
@@ -184,8 +185,8 @@ MonoBehaviour:
   m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
-  m_FillMethod: 0
-  m_FillAmount: 1
+  m_FillMethod: 1
+  m_FillAmount: 0
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
@@ -198,6 +199,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 134423843}
   m_CullTransparentMesh: 1
+--- !u!114 &134423847
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 134423843}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af5a6fbcdaba38540b3574e6330b4966, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxTime: 1
+  canAttack: 0
+  lifePanel: {fileID: 0}
 --- !u!1 &250615321
 GameObject:
   m_ObjectHideFlags: 0
