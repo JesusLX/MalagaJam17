@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
+using UnityEngine.Events;
 
 public class BattleLine : MonoBehaviour {
     public float maxTime;
     public bool canAttack;
     public Image lifePanel;
-
+    public UnityEvent<int> onAttack;
     float fraction;
     public float goalValue = 0.92f;
 
@@ -49,8 +50,10 @@ public class BattleLine : MonoBehaviour {
 
     private void Attack() {
         if (fraction >= 0.95f) {
+            onAttack.Invoke(2);
             Debug.Log("ATAQUERRR PERFESTOOOO " + fraction);
         } else if (fraction >= goalValue) {
+            onAttack.Invoke(1);
             Debug.Log("ATAQUERRR con " + fraction);
         } else {
             Debug.Log("Has fallao :(");
