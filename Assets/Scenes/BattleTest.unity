@@ -234,7 +234,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.86415094, g: 0.8527376, b: 0.86112756, a: 0}
+  m_BackGroundColor: {r: 0.5849056, g: 0.29907435, b: 0.35595486, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -860,14 +860,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1752860300}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4964482d29c107447ae4b184d2af3e09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   maxTime: 60
   timePanel: {fileID: 134423845}
-  turn: 0
 --- !u!1 &1764100077
 GameObject:
   m_ObjectHideFlags: 0
@@ -1063,6 +1062,7 @@ MonoBehaviour:
   - Animals
   - Animals
   mText: {fileID: 0}
+  themeSelectorTime: 5
 --- !u!114 &1805866872
 MonoBehaviour:
   m_ObjectHideFlags: 0
