@@ -40,11 +40,14 @@ public class PlayerController : MonoBehaviour {
         }
     }
     public void OnBattleStart() {
+        hpController.Init();
+
         battleLine.StartCanAttack();
         canAttack = true;
         //battleLine.canAttack = canAttack;
     }
     public void OnBattleRestart() {
+        hpController.Init();
         animator.SetTrigger("ress");
         battleLine.StartCanAttack();
         canAttack = true;

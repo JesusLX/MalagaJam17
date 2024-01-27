@@ -14,13 +14,10 @@ public class BattleLine : MonoBehaviour {
     public KeyCode pressButton;
 
     float fraction;
-    public float maxValue = 10f;
+    public float maxValue = 1;
 
     private void Start() {
         lifePanel = this.gameObject.GetComponentInChildren<Slider>();
-        lifePanel.maxValue = maxValue;
-        lifePanel.value = 0;
-        StartCoroutine(ChangeTimer());
     }
     private void Update() {
         if (Input.GetKeyDown(pressButton)) {
@@ -29,6 +26,8 @@ public class BattleLine : MonoBehaviour {
     }
 
     IEnumerator ChangeTimer() {
+        lifePanel.maxValue = maxValue;
+        lifePanel.value = 0;
         float myTimer = 0;
         canAttack = true;
         bool ascending = true;
