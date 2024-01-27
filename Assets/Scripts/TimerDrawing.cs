@@ -10,6 +10,8 @@ public class TimerDrawing : MonoBehaviour {
     private float myTimer;
     public Slider timePanel;
 
+    Coroutine timerCoroutine;
+
     public static Turns turn = Turns.themeSelector;
     public enum Turns {
         themeSelector, drawPlayer1 ,drawPlayer2, battle, endBattle
@@ -21,7 +23,7 @@ public class TimerDrawing : MonoBehaviour {
         //ThemeSelector.instance.RunChange();
         resetTimer();
         Coroutine cor = (ThemeSelector.instance.RunChange());
-        StartCoroutine(StartThemeSelector(cor));
+        timerCoroutine = StartCoroutine(StartThemeSelector(cor));
         turn = Turns.themeSelector;
     }
 
@@ -76,7 +78,9 @@ public class TimerDrawing : MonoBehaviour {
             
             case Turns.drawPlayer2:
                 resetTimer();
-                StartCoroutine(StartThemeSelector(null));
+                if (timerCoroutine != null)
+                    StopCoroutine(timerCoroutine);
+                timerCoroutine = StartCoroutine(StartThemeSelector(null));
 
                 UIAnimator.instance.AnimatePlayerTwoPanel();
                 break;
