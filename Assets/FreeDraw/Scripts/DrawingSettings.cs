@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 namespace FreeDraw
 {
@@ -14,7 +15,6 @@ namespace FreeDraw
         // Changing pen settings is easy as changing the static properties Drawable.Pen_Colour and Drawable.Pen_Width
         public void SetMarkerColour(Color new_color)
         {
-            Debug.Log(new_color.ToString());
             Drawable.Pen_Colour = new_color;
         }
         // new_width is radius in pixels
@@ -22,17 +22,19 @@ namespace FreeDraw
         {
             Drawable.Pen_Width = new_width;
         }
-        public void SetMarkerWidth(float new_width)
+        public void SetMarkerWidth(Slider slider)
         {
-            SetMarkerWidth((int)new_width);
+            SetMarkerWidth((int)slider.value);
+            Debug.Log(Drawable.Pen_Width);
         }
 
-        public void SetTransparency(float amount)
+        public void SetTransparency(Slider amount)
         {
-            Transparency = amount;
+            Transparency = amount.value;
             Color c = Drawable.Pen_Colour;
-            c.a = amount;
+            c.a = amount.value;
             Drawable.Pen_Colour = c;
+            Debug.Log(Drawable.Pen_Colour);
         }
       
         public void SetEraser()

@@ -13,9 +13,9 @@ namespace FreeDraw
     public class Drawable : MonoBehaviour
     {
         // PEN COLOUR
-        public static Color Pen_Colour = Color.red;     // Change these to change the default drawing settings
+        public static Color Pen_Colour = Color.white;     // Change these to change the default drawing settings
         // PEN WIDTH (actually, it's a radius, in pixels)
-        public static int Pen_Width = 3;
+        public static int Pen_Width = 10;
 
 
         public delegate void Brush_Function(Vector2 world_position);
@@ -54,6 +54,7 @@ namespace FreeDraw
         // Go through each step
         public void BrushTemplate(Vector2 world_position)
         {
+            Debug.Log("PEEEEEN"+ Pen_Width);
             // 1. Change world position to pixel coordinates
             Vector2 pixel_pos = WorldToPixelCoordinates(world_position);
 
@@ -99,6 +100,8 @@ namespace FreeDraw
         // Changes the surrounding pixels of the world_point to the static pen_colour
         public void PenBrush(Vector2 world_point)
         {
+            Debug.Log("PEEEEEN2_" + Pen_Width);
+
             Vector2 pixel_pos = WorldToPixelCoordinates(world_point);
 
             cur_colors = drawable_texture.GetPixels32();

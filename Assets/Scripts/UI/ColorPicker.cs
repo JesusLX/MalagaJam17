@@ -12,10 +12,12 @@ public class ColorPicker : MonoBehaviour
     public DrawingSettings drawingSettings;
     private void Start() {
         drawingSettings = FindObjectOfType<DrawingSettings>();
+        if(image != null)
         image.color = color;
     }
     public void SetColor() {
         drawingSettings.SetMarkerColour(color);
+        SampleColor.instance.SetColor(color);
     }
     
 }

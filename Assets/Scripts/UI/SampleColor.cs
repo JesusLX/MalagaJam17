@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class SampleColor : MonoBehaviour
+public class SampleColor : Singleton<SampleColor>
 {
     Image image;
     void Start()
