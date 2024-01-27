@@ -40,12 +40,15 @@ public class PlayerController : MonoBehaviour {
         }
     }
     public void OnBattleStart() {
+        battleLine.StartCanAttack();
         canAttack = true;
-        battleLine.canAttack = canAttack;
+        //battleLine.canAttack = canAttack;
     }
     public void OnBattleRestart() {
+        animator.SetTrigger("ress");
+        battleLine.StartCanAttack();
         canAttack = true;
-        battleLine.canAttack = canAttack;
+        //battleLine.canAttack = canAttack;
     }
     public void OnBattleEnd() {
         canAttack = false;

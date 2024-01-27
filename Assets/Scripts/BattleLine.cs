@@ -80,4 +80,8 @@ public class BattleLine : MonoBehaviour {
         //lifePanel.color = previousColor;
         StartCoroutine(ChangeTimer());
     }
+
+    public void StartCanAttack() {
+        StartCoroutine(ChangeTimer());
+    }
 }
