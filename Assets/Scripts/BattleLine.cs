@@ -10,6 +10,9 @@ public class BattleLine : MonoBehaviour {
     public bool canAttack;
     public Image lifePanel;
     public UnityEvent<int> onAttack;
+
+    public KeyCode pressButton;
+
     float fraction;
     public float goalValue = 0.92f;
 
@@ -18,7 +21,7 @@ public class BattleLine : MonoBehaviour {
         StartCoroutine(ChangeTimer());
     }
     private void Update() {
-        if (Input.GetKeyDown(KeyCode.Space)) {
+        if (Input.GetKeyDown(pressButton)) {
             Attack();
         }
     }
