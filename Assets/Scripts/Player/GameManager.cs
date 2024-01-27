@@ -21,7 +21,8 @@ public class GameManager : Singleton<GameManager>
     }
 
     public void StartBattle() {
-         onBattleStart?.Invoke();
+        finishPanel.SetActive(false);
+        onBattleStart?.Invoke();
     }
 
     public void RestartBattle() {
