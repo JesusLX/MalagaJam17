@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class ThemeSelector : MonoBehaviour
+public class ThemeSelector : Singleton<ThemeSelector>
 {
     public string[] myThemeList;
     public TextMeshProUGUI mText;
+    public float themeSelectorTime = 5;
 
     // Start is called before the first frame update
     void Start()
@@ -15,7 +16,7 @@ public class ThemeSelector : MonoBehaviour
         mText = this.gameObject.GetComponent<TextMeshProUGUI>();
         mText.text = "prueba";
 
-        RunChange();
+        // RunChange();
     }
 
 
@@ -28,8 +29,8 @@ public class ThemeSelector : MonoBehaviour
     }
 
     [ContextMenu("Do Change in few seconds")]
-    private void RunChange() {
-        StartCoroutine(ChangeWords(5));
+    public Coroutine RunChange() {
+        return StartCoroutine(ChangeWords(themeSelectorTime));
     }
 
     IEnumerator ChangeWords(float time) {
@@ -44,6 +45,7 @@ public class ThemeSelector : MonoBehaviour
             ReturnTheme();
             yield return new WaitForSeconds(waitTime);
         }
+
     }
 
 
