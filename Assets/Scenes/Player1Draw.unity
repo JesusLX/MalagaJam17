@@ -324,7 +324,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -778.99994, y: -20.999939}
+  m_AnchoredPosition: {x: -779, y: -21}
   m_SizeDelta: {x: -1835.105, y: -1014}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &477442128
@@ -1122,32 +1122,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 909482774}
   m_CullTransparentMesh: 1
---- !u!1 &935044241 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6424783815334645117, guid: 35b3fdf5fc3ef08428ff2418ee331dad, type: 3}
-  m_PrefabInstance: {fileID: 1707242274983332955}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &935044243
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 935044241}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: f98b9292aa54cb04f8274b60bd8da28f, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1263154996
 GameObject:
   m_ObjectHideFlags: 0
@@ -1370,32 +1344,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1622226054}
   m_CullTransparentMesh: 1
---- !u!1 &1731174046 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1905309325789046934, guid: db67902f7e640e84a9b382db85a08559, type: 3}
-  m_PrefabInstance: {fileID: 4612294441419556566}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &1731174048
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1731174046}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 0b752000b78a81e45a576bc712240476, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1877621133
 GameObject:
   m_ObjectHideFlags: 0
@@ -1555,18 +1503,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2286101473477145265, guid: 35b3fdf5fc3ef08428ff2418ee331dad, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -6.577822
-      objectReference: {fileID: 0}
-    - target: {fileID: 4126742160610519412, guid: 35b3fdf5fc3ef08428ff2418ee331dad, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -2.056402
-      objectReference: {fileID: 0}
-    - target: {fileID: 5614443428712935118, guid: 35b3fdf5fc3ef08428ff2418ee331dad, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -1.89
-      objectReference: {fileID: 0}
     - target: {fileID: 6424783815334645117, guid: 35b3fdf5fc3ef08428ff2418ee331dad, type: 3}
       propertyPath: m_Name
       value: Player1Draw
@@ -1574,10 +1510,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 6424783815334645117, guid: 35b3fdf5fc3ef08428ff2418ee331dad, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 935044243}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 35b3fdf5fc3ef08428ff2418ee331dad, type: 3}
 --- !u!1001 &4612294441419556566
 PrefabInstance:
@@ -1634,10 +1567,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1905309325789046934, guid: db67902f7e640e84a9b382db85a08559, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1731174048}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: db67902f7e640e84a9b382db85a08559, type: 3}
 --- !u!1001 &4767004044808441383
 PrefabInstance:
