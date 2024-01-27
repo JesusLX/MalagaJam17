@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour {
         animator = GetComponent<Animator>();
         GameManager.instance.onBattleEnd.AddListener(OnBattleEnd);
         GameManager.instance.onBattleStart.AddListener(OnBattleStart);
+        GameManager.instance.onBattleRestart.AddListener(OnBattleRestart);
         battleLine.onAttack.AddListener(Attack);
     }
     public void Attack(int multiplier) {
@@ -31,12 +32,18 @@ public class PlayerController : MonoBehaviour {
         bool live = hpController.Damage(gadget.damage);
         if (!live) {
             Debug.Log(live, this);
-            GameManager.instance.endBattle(gadget.thrower);
+            animator.SetTrigger("die");
+
+            GameManager.instance.EndBattle(gadget.thrower);
         } else {
             animator.SetTrigger("hitted");
         }
     }
     public void OnBattleStart() {
+        canAttack = true;
+        battleLine.canAttack = canAttack;
+    }
+    public void OnBattleRestart() {
         canAttack = true;
         battleLine.canAttack = canAttack;
     }
