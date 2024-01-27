@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -8,13 +9,13 @@ public class ThemeSelector : Singleton<ThemeSelector>
     public string[] myThemeList;
     public TextMeshProUGUI mText;
     public float themeSelectorTime = 5;
-
+    public List<ParticleSystem> themeSelectedParticles;
     // Start is called before the first frame update
     void Start()
     {
 
         mText = this.gameObject.GetComponent<TextMeshProUGUI>();
-        mText.text = "prueba";
+        //mText.text = "prueba";
 
         // RunChange();
     }
@@ -34,10 +35,16 @@ public class ThemeSelector : Singleton<ThemeSelector>
     }
 
     IEnumerator ChangeWords(float time) {
-
+        float moveTime = 1f;
+        float moveBackTime = 0.5f;
+        Vector3 initPos = mText.rectTransform.localPosition;
+        Vector3 initScale = mText.rectTransform.localScale;
+        mText.rectTransform.DOLocalMove(Vector3.zero, moveTime);
+        mText.rectTransform.DOScale(Vector3.one * 5, moveTime);
         float waitTime = 0.01f;
+        yield return new WaitForSeconds(moveTime);
 
-        while(time > 0) {
+        while (time > 0) {
             waitTime += 0.001f;
             time -= waitTime;
            
@@ -45,6 +52,12 @@ public class ThemeSelector : Singleton<ThemeSelector>
             ReturnTheme();
             yield return new WaitForSeconds(waitTime);
         }
+        themeSelectedParticles.ForEach(particle => { particle.Play(); });
+        yield return new WaitForSeconds(2f);
+
+        mText.rectTransform.DOLocalMove(initPos, moveBackTime);
+        mText.rectTransform.DOScale(initScale, moveBackTime);
+        yield return new WaitForSeconds(moveBackTime);
 
     }
 
