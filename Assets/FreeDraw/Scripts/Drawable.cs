@@ -154,7 +154,12 @@ namespace FreeDraw
                 {
                     // We're over the texture we're drawing on!
                     // Use whatever function the current brush is
+                    try {
+
                     current_brush(mouse_world_position);
+                    }catch(System.Exception e) {
+
+                    }
                 }
 
                 else
