@@ -5,13 +5,15 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class TimerDrawing : MonoBehaviour
-{
+public class TimerDrawing : MonoBehaviour {
     public float maxTime;
     private float myTimer;
     public Image timePanel;
 
-    public static float turn;
+    public static Turns turn = Turns.themeSelector;
+    public enum Turns {
+        themeSelector, drawPlayer1, drawPlayer2, battle, endBattle
+    }
 
     private void Start() {
         // timePanel = GetComponent<Image>();
@@ -20,24 +22,21 @@ public class TimerDrawing : MonoBehaviour
         Coroutine cor = (ThemeSelector.instance.RunChange());
         StartCoroutine(StartThemeSelector(cor));
 
-        turn = 0;
+        turn = Turns.themeSelector;
     }
 
     IEnumerator StartThemeSelector(Coroutine waitUntilCoroutine) {
 
         yield return (waitUntilCoroutine);
-
-        UIAnimator.instance.AnimatePlayerOnePanel();
+        passTurn();
 
         resetTimer();
 
-        while(myTimer > 0f) {
+        while (myTimer > 0f) {
             if (myTimer > 0f) {
                 changeTimer();
-            } else if (turn == 0) {
-                passTurn();
             } else {
-                MainMenu.instance.PlayBattleScene();
+                passTurn();
             }
 
             yield return new WaitForEndOfFrame();
@@ -57,15 +56,28 @@ public class TimerDrawing : MonoBehaviour
         myTimer = maxTime;
     }
 
+    [ContextMenu("PassTurn")]
     public void passTurn() {
-        if(turn >= 1) {
-            MainMenu.instance.PlayBattleScene();
-        }   else {
-            UIAnimator.instance.AnimatePlayerTwoPanel();
-            turn++;
-            resetTimer();
+        turn++;
+        switch (turn) {
+            case Turns.themeSelector:
+                break;
+            case Turns.drawPlayer1:
+                resetTimer();
+                UIAnimator.instance.AnimatePlayerOnePanel();
+                break;
+            case Turns.drawPlayer2:
+                resetTimer();
+                UIAnimator.instance.AnimatePlayerTwoPanel();
+                break;
+            case Turns.battle:
+                MainMenu.instance.PlayBattleScene();
+                break;
+            case Turns.endBattle:
+                break;
         }
-        
+
+
     }
 
 }
