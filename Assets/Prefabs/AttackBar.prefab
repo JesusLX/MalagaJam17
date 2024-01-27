@@ -72,8 +72,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -322.01804, y: 430.49}
-  m_SizeDelta: {x: 64.032, y: -3.361}
+  m_AnchoredPosition: {x: -0.000015258789, y: 430.49}
+  m_SizeDelta: {x: 0, y: -3.361}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2351470128340768638
 CanvasRenderer:
@@ -148,8 +148,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -319.82898, y: 13.568}
-  m_SizeDelta: {x: 33.386, y: 830.485}
+  m_AnchoredPosition: {x: 0, y: 13.568001}
+  m_SizeDelta: {x: 0, y: 830.485}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3039381877496687762
 CanvasRenderer:
@@ -172,7 +172,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.39341396, g: 0.50116867, b: 0.96981126, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -204,6 +204,10 @@ MonoBehaviour:
   maxTime: 1
   canAttack: 0
   lifePanel: {fileID: 0}
+  onAttack:
+    m_PersistentCalls:
+      m_Calls: []
+  pressButton: 0
   goalValue: 0.9
 --- !u!1001 &4674653151553405502
 PrefabInstance:
@@ -219,7 +223,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5616520923663442685, guid: 8da6c2334b6bc8340a90386b8aa705f0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -322
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5616520923663442685, guid: 8da6c2334b6bc8340a90386b8aa705f0, type: 3}
       propertyPath: m_LocalPosition.y
