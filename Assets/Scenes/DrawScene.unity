@@ -1227,7 +1227,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -1928.9999, y: -17.151978}
+  m_AnchoredPosition: {x: -1929, y: -17.151978}
   m_SizeDelta: {x: 0, y: -663.204}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &927137518
@@ -2282,7 +2282,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -1928.9999, y: -17.151978}
+  m_AnchoredPosition: {x: -1929, y: -17.151978}
   m_SizeDelta: {x: 0, y: -663.204}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1752571628
@@ -2614,15 +2614,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myThemeList:
   - Cowboy
-  - Beach
+  - Sad
   - Spain
-  - Madrid
+  - VERDUNCH
   - Food
   - Magic
   - France
   - Animals
-  - Animals
-  - Animals
+  - Circus
+  - Tale
+  - Drag
+  - Videogame
+  - TWO COLORS
+  - ALL COLORS
+  - Malaga Jam
+  - Scary
+  - Alien
+  - You
+  - Juan y medio
+  - Random
   mText: {fileID: 1805866872}
   themeSelectorTime: 5
   themeSelectedParticles:
@@ -3175,7 +3185,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -1928.9999, y: -17.151978}
+  m_AnchoredPosition: {x: -1929, y: -17.151978}
   m_SizeDelta: {x: 0, y: -663.204}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2020368399
