@@ -30,7 +30,7 @@ public class PlayerController : MonoBehaviour {
     }
     public void GetHit(Gadget gadget) {
         bool live = hpController.Damage(gadget.damage);
-        if (!live) {
+        if (!live && canAttack) {
             Debug.Log(live, this);
             animator.SetTrigger("die");
 
