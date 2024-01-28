@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AudioManager : Singleton<AudioManager>
+public class AudioManager : MonoBehaviour
 {
 
     private FMOD.Studio.EventInstance snapshot;
@@ -38,7 +38,6 @@ public class AudioManager : Singleton<AudioManager>
         if (music3isplaying == true)
         {
             musicInstance3.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
-            musicInstance3.release();
             music3isplaying = false;
         }
         musicInstance1.start();
@@ -47,14 +46,12 @@ public class AudioManager : Singleton<AudioManager>
     public void PlayMusic2()
     {
         musicInstance1.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
-        musicInstance1.release();
         musicInstance2.start();
     }
 
     public void PlayMusic3()
     {
         musicInstance2.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
-        musicInstance2.release();
         musicInstance3.start();
         music3isplaying = true;
     }

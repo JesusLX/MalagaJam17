@@ -9,7 +9,7 @@ public class Gadget : PoolItem {
     public PlayerController thrower;
     public Rigidbody2D rb;
     public void ThrowGadget() {
-        AudioManager.instance.PlayOneShot(sound);
+        FindObjectOfType<AudioManager>().PlayOneShot(sound);
         rb.AddForce(transform.up * 800f);
     }
 }

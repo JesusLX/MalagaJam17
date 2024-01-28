@@ -9,15 +9,16 @@ public class MainMenu : Singleton<MainMenu> {
     }
     public scene thisScene;
     private void Start() {
+        Debug.Log("ESCENAAA " + thisScene);
         switch (thisScene) {
             case scene.mm:
-                AudioManager.instance.PlayMusic();
+                FindObjectOfType<AudioManager>().PlayMusic();
                 break;
             case scene.draw:
-                AudioManager.instance.PlayMusic2();
+                FindObjectOfType<AudioManager>().PlayMusic2();
                 break;
             case scene.battle:
-                AudioManager.instance.PlayMusic3();
+                FindObjectOfType<AudioManager>().PlayMusic3();
                 break;
         }
     }

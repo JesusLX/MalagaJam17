@@ -18,7 +18,7 @@ public class UIAnimator : Singleton<UIAnimator> {
 
     private void AnimatePlayerTurns(RectTransform playerPanel, Action onComplete) {
         playerPanel.DOAnchorPos(Vector2.zero, 3f).SetEase(Ease.OutElastic).OnComplete(() => {
-            AudioManager.instance.PlayOneShot("event:/SFX/Throw");
+            FindObjectOfType<AudioManager>().PlayOneShot("event:/SFX/Throw");
             playerPanel.DOAnchorPos(new Vector2(10000, 0), 1.25f);
             onComplete();
         });
