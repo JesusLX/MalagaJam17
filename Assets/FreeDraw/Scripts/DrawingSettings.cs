@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 namespace FreeDraw
 {
@@ -21,42 +22,21 @@ namespace FreeDraw
         {
             Drawable.Pen_Width = new_width;
         }
-        public void SetMarkerWidth(float new_width)
+        public void SetMarkerWidth(Slider slider)
         {
-            SetMarkerWidth((int)new_width);
+            SetMarkerWidth((int)slider.value);
+            Debug.Log(Drawable.Pen_Width);
         }
 
-        public void SetTransparency(float amount)
+        public void SetTransparency(Slider amount)
         {
-            Transparency = amount;
+            Transparency = amount.value;
             Color c = Drawable.Pen_Colour;
-            c.a = amount;
+            c.a = amount.value;
             Drawable.Pen_Colour = c;
+            Debug.Log(Drawable.Pen_Colour);
         }
-
-
-        // Call these these to change the pen settings
-        public void SetMarkerRed()
-        {
-            Color c = Color.red;
-            c.a = Transparency;
-            SetMarkerColour(c);
-            Drawable.drawable.SetPenBrush();
-        }
-        public void SetMarkerGreen()
-        {
-            Color c = Color.green;
-            c.a = Transparency;
-            SetMarkerColour(c);
-            Drawable.drawable.SetPenBrush();
-        }
-        public void SetMarkerBlue()
-        {
-            Color c = Color.blue;
-            c.a = Transparency;
-            SetMarkerColour(c);
-            Drawable.drawable.SetPenBrush();
-        }
+      
         public void SetEraser()
         {
             SetMarkerColour(new Color(255f, 255f, 255f, 0f));
