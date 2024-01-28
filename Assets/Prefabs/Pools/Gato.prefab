@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51a3329f315dfdd42b25b4d36c2e2651, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sound: 
+  sound: event:/SFX/Cat
   sprite: {fileID: 21300000, guid: 869f2f97e4fb02c4dabeba9a3897d602, type: 3}
   damage: 1
   target: {fileID: 0}

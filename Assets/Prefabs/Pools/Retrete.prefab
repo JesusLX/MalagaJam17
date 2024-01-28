@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51a3329f315dfdd42b25b4d36c2e2651, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sound: 
+  sound: event:/SFX/Toilet
   sprite: {fileID: 21300000, guid: 360c979ed48efb0448b625f57aa5279e, type: 3}
   damage: 1
   target: {fileID: 0}
