@@ -3257,15 +3257,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myThemeList:
   - Cowboy
-  - Beach
+  - Sad
   - Spain
-  - Madrid
+  - VERDUNCH
   - Food
   - Magic
   - France
   - Animals
-  - Animals
-  - Animals
+  - Circus
+  - Tale
+  - Drag
+  - Videogame
+  - TWO COLORS
+  - ALL COLORS
+  - Malaga Jam
+  - Scary
+  - Alien
+  - You
+  - Juan y medio
+  - Random
   mText: {fileID: 1805866872}
   themeSelectorTime: 5
   themeSelectedParticles:
