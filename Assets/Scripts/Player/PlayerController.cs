@@ -11,10 +11,12 @@ public class PlayerController : MonoBehaviour {
     Animator animator;
     private void Start() {
         animator = GetComponent<Animator>();
+        if(GameManager.instance != null) { 
         GameManager.instance.onBattleEnd.AddListener(OnBattleEnd);
         GameManager.instance.onBattleStart.AddListener(OnBattleStart);
         GameManager.instance.onBattleRestart.AddListener(OnBattleRestart);
         battleLine.onAttack.AddListener(Attack);
+        }
     }
     public void Attack(int multiplier) {
         if (canAttack) {

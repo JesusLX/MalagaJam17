@@ -1089,6 +1089,22 @@ PrefabInstance:
       propertyPath: m_AnchorMin.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1495986681865689058, guid: bf08db48def41294bab40950ddb12050, type: 3}
+      propertyPath: color.b
+      value: 0.5600572
+      objectReference: {fileID: 0}
+    - target: {fileID: 1495986681865689058, guid: bf08db48def41294bab40950ddb12050, type: 3}
+      propertyPath: color.g
+      value: 0.1265574
+      objectReference: {fileID: 0}
+    - target: {fileID: 1495986681865689058, guid: bf08db48def41294bab40950ddb12050, type: 3}
+      propertyPath: color.r
+      value: 0.8490566
+      objectReference: {fileID: 0}
+    - target: {fileID: 1682598872041476496, guid: bf08db48def41294bab40950ddb12050, type: 3}
+      propertyPath: color.b
+      value: 0.3872434
+      objectReference: {fileID: 0}
     - target: {fileID: 1780116818050084146, guid: bf08db48def41294bab40950ddb12050, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -1212,6 +1228,18 @@ PrefabInstance:
     - target: {fileID: 2871033508484629941, guid: bf08db48def41294bab40950ddb12050, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -108.705505
+      objectReference: {fileID: 0}
+    - target: {fileID: 3667609729498152551, guid: bf08db48def41294bab40950ddb12050, type: 3}
+      propertyPath: m_Color.b
+      value: 0.19433957
+      objectReference: {fileID: 0}
+    - target: {fileID: 3667609729498152551, guid: bf08db48def41294bab40950ddb12050, type: 3}
+      propertyPath: m_Color.g
+      value: 0.45544615
+      objectReference: {fileID: 0}
+    - target: {fileID: 3667609729498152551, guid: bf08db48def41294bab40950ddb12050, type: 3}
+      propertyPath: m_Color.r
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4852158596006643780, guid: bf08db48def41294bab40950ddb12050, type: 3}
       propertyPath: m_AnchorMax.y
@@ -1836,7 +1864,7 @@ RectTransform:
   m_Father: {fileID: 2131407894}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -2454,7 +2482,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1554347119
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3060,7 +3088,7 @@ RectTransform:
   m_Father: {fileID: 419857871}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -3313,7 +3341,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1764100078
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4532,6 +4560,10 @@ PrefabInstance:
       value: MenuManager
       objectReference: {fileID: 0}
     - target: {fileID: 7600087015971955051, guid: 0a5a81ba39d7ec6448879a6143d308af, type: 3}
+      propertyPath: countdownText
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7600087015971955051, guid: 0a5a81ba39d7ec6448879a6143d308af, type: 3}
       propertyPath: playerOnePanel
       value: 
       objectReference: {fileID: 1752571627}
@@ -4555,6 +4587,18 @@ PrefabInstance:
       propertyPath: timePanel
       value: 
       objectReference: {fileID: 1554347120}
+    - target: {fileID: 7897904782796279953, guid: 0a5a81ba39d7ec6448879a6143d308af, type: 3}
+      propertyPath: activateInDrawTurnObjects.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7897904782796279953, guid: 0a5a81ba39d7ec6448879a6143d308af, type: 3}
+      propertyPath: activateInDrawTurnObjects.Array.data[0]
+      value: 
+      objectReference: {fileID: 1554347118}
+    - target: {fileID: 7897904782796279953, guid: 0a5a81ba39d7ec6448879a6143d308af, type: 3}
+      propertyPath: activateInDrawTurnObjects.Array.data[1]
+      value: 
+      objectReference: {fileID: 1764100077}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

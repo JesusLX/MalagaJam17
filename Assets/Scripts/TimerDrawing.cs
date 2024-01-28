@@ -9,7 +9,7 @@ public class TimerDrawing : MonoBehaviour {
     public float maxTime;
     private float myTimer;
     public Slider timePanel;
-
+    public List<GameObject> activateInDrawTurnObjects;
     Coroutine timerCoroutine;
 
     public static Turns turn = Turns.themeSelector;
@@ -72,6 +72,7 @@ public class TimerDrawing : MonoBehaviour {
             case Turns.themeSelector:
                 break;
             case Turns.drawPlayer1:
+                activateInDrawTurnObjects.ForEach(o => o.SetActive(true));
                 resetTimer();
                 UIAnimator.instance.AnimatePlayerOnePanel();
                 break;
